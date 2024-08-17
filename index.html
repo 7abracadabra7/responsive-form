@@ -4,9 +4,76 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
-    <title>Document</title>
+    <title>Contact Form</title>
   </head>
   <body>
+    <div class="container">
+      <div class="form">
+        <h1>Contact Us</h1>
+        <div class="contact-info">
+          <div class="pair">
+            <div class="input-container">
+              <input name="name" class="input" type="text" />
+              <label for="" class="dynamic-label">First Name</label>
+            </div>
+            <div class="input-container">
+              <input type="text" name="name" class="input" />
+              <label for="lastName" class="dynamic-label">Last Name</label>
+            </div>
+          </div>
+          <div class="single">
+            <div class="input-container">
+              <input type="email" name="email" class="input" />
+              <label for="" class="dynamic-label">First Name</label>
+            </div>
+          </div>
+          <div class="query-container">
+            <label for="">Query Type *</label>
+            <div class="pair">
+              <div class="radio-btn-container">
+                <input
+                  type="radio"
+                  name="query-type"
+                  id="general-inquiry"
+                  value="General Enquiry"
+                />
+                <label for="general-inquiry">General Enquiry</label>
+              </div>
+              <div class="radio-btn-container">
+                <input
+                  type="radio"
+                  name="query-type"
+                  id="support-request"
+                  value="Support Request"
+                />
+                <label for="support-request">Support Request</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="single">
+            <div class="input-container textarea">
+              <textarea name="message" class="input"></textarea>
+              <label for="">Message </label>
+            </div>
+          </div>
+        </div>
+        <div id="accept-form">
+          <input
+            type="checkbox"
+            name="acceptance"
+            id="accept-form"
+            value="accept"
+            required
+          />
+          <label for="accept-form"
+            >I consent to being contacted by the team</label
+          >
+        </div>
+        <button type="submit">Submit</button>
+      </div>
+    </div>
+
     <script src="./app.js"></script>
   </body>
 </html>
