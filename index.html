@@ -4,10 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
+    <!-- <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    /> -->
+
     <title>Contact Form</title>
   </head>
   <body>
     <div class="container">
+      <div class="msg-alert">
+        <i class="bx bx-check-circle"></i>
+      </div>
       <div class="form">
         <h1>Contact Us</h1>
         <div class="contact-info">
@@ -18,7 +26,7 @@
               <span class="focused-label">First Name</span>
             </div>
             <div class="input-container">
-              <input type="text" name="name" class="input" />
+              <input type="text" name="lastname" class="input" />
               <label for="lastName" class="dynamic-label">Last Name</label>
               <span class="focused-label">Last Name</span>
             </div>
@@ -31,7 +39,7 @@
             </div>
           </div>
           <div class="query-container">
-            <label for="">Query Type *</label>
+            <label for="">* Query Type: </label>
             <div class="pair">
               <div class="radio-btn-container">
                 <input

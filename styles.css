@@ -121,6 +121,7 @@ textarea {
   font-size: 0.9rem;
   font-weight: 400;
   z-index: 1000;
+  pointer-events: none;
   transition: 0.5s;
 }
 
@@ -140,6 +141,8 @@ textarea {
 
 .query-container label {
   font-size: 0.85rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
 }
 
 .textarea label {
@@ -151,6 +154,7 @@ textarea {
   transform: translateY(0);
   font-weight: 400;
   font-size: 0.9rem;
+  transition: 0.5s;
 }
 
 #accept-form {
@@ -185,7 +189,7 @@ button:hover {
   font-size: 0.8rem;
   padding: 0 0.4rem;
   pointer-events: none;
-  z-index: 500;
+  /* z-index: 500; */
   color: transparent;
 }
 
@@ -215,10 +219,33 @@ button:hover {
   transform: translateY(-50%);
   left: 25px;
   font-size: 0.8rem;
+  z-index: 1500;
 }
 
 .input-container.focus span:before,
 .input-container.focus span:after {
   width: 50%;
   opacity: 1;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+@media (max-width: 450px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .pair {
+    flex-direction: column;
+  }
+  .pair .input-container,
+  .pair .radio-btn-container {
+    width: 100%;
+  }
+
+  .radio-btn-container {
+    margin-bottom: 0.7rem;
+  }
 }
