@@ -35,18 +35,18 @@ body {
   padding: 1rem 1rem;
   background-color: var(--color-primary-dark);
   z-index: 1500;
-  transform: translateY(7px);
+  transform: translate(90px, 50px);
   border-radius: 5px;
   color: var(--color-background);
   font-size: 0.8rem;
   display: none;
 }
 
-.msg-alert.active{
+.msg-alert.active {
   display: block;
 }
 
-.msg-alert p{
+.msg-alert p {
   font-size: 0.65rem;
 }
 
@@ -55,12 +55,12 @@ body {
   margin-bottom: 5px;
 }
 
-.bx {
+.alert-title .bx {
   color: var(--color-background);
   margin-right: 5px;
 }
 
-.form {
+form {
   width: 100%;
   padding: 30px;
   max-width: 640px;
@@ -101,10 +101,23 @@ body {
   margin: 1rem 0;
 }
 
+.input-container i {
+  visibility: hidden;
+  position: absolute;
+  top: 15px;
+  /* transform: translateY(-50%); */
+  right: 10px;
+}
+
+small {
+  visibility: hidden;
+}
+
 .pair {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: start;
 }
 
 .pair .input-container,
@@ -144,9 +157,8 @@ textarea {
 
 .dynamic-label {
   position: absolute;
-  top: 50%;
+  top: 13px;
   left: 15px;
-  transform: translateY(-50%);
   padding: 0 0.4rem;
   color: var(--color-background);
   font-size: 0.9rem;
@@ -257,10 +269,6 @@ button:hover {
 .input-container.focus span:after {
   width: 50%;
   opacity: 1;
-}
-
-input:focus::-webkit-input-placeholder {
-  color: transparent;
 }
 
 @media (max-width: 450px) {

@@ -20,7 +20,7 @@
         </div>
         <p>Thanks for completing the form. We'll be in touch soon!</p>
       </div>
-      <div class="form">
+      <form onsubmit="formHandler">
         <h1>Contact Us</h1>
         <div class="contact-info">
           <div class="pair">
@@ -28,11 +28,17 @@
               <input name="name" class="input" type="text" />
               <label for="" class="dynamic-label">First Name</label>
               <span class="focused-label">First Name</span>
+              <i class="bx bx-check-circle"></i>
+              <i class="bx bx-error-circle"></i>
+              <small>Error message</small>
             </div>
             <div class="input-container">
               <input type="text" name="lastname" class="input" />
               <label for="lastName" class="dynamic-label">Last Name</label>
               <span class="focused-label">Last Name</span>
+              <i class="bx bx-check-circle"></i>
+              <i class="bx bx-error-circle"></i>
+              <small>Error message</small>
             </div>
           </div>
           <div class="single">
@@ -40,6 +46,9 @@
               <input type="email" name="email" class="input" />
               <label for="" class="dynamic-label">Email</label>
               <span class="focused-label">Email</span>
+              <i class="bx bx-check-circle"></i>
+              <i class="bx bx-error-circle"></i>
+              <small>Error message</small>
             </div>
           </div>
           <div class="query-container">
@@ -64,6 +73,8 @@
                 <label for="support-request">Support Request</label>
               </div>
             </div>
+
+            <small>Error message</small>
           </div>
 
           <div class="single">
@@ -87,7 +98,7 @@
           >
         </div>
         <button type="submit">Submit</button>
-      </div>
+      </form>
     </div>
 
     <script src="./app.js"></script>
