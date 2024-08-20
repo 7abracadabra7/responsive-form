@@ -5,6 +5,8 @@ html {
   --color-white: #fff;
   --color-primary-200: #1abc9c;
   --color-primary-dark: #242424;
+  --color-success: #0e522a;
+  --color-error: #e74c3c;
 }
 
 * {
@@ -15,35 +17,32 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: var(--color-background);
 }
 
 .container {
-  position: relative;
+  /* position: relative; */
   width: 100%;
   min-height: 100vh;
-  padding: 2rem;
-  background-color: var(--color-background);
+  margin: 0px auto;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .msg-alert {
   width: 320px;
+  margin: 20px auto 0px;
   padding: 1rem 1rem;
   background-color: var(--color-primary-dark);
   z-index: 1500;
-  transform: translate(90px, 50px);
+  transform: translateY(20px);
   border-radius: 5px;
   color: var(--color-background);
   font-size: 0.8rem;
-  display: none;
+  visibility: hidden;
 }
 
 .msg-alert.active {
-  display: block;
+  visibility: visible;
 }
 
 .msg-alert p {
@@ -63,6 +62,7 @@ body {
 form {
   width: 100%;
   padding: 30px;
+  margin: 0 auto;
   max-width: 640px;
   background-color: var(--color-primary-200);
   border-radius: 10px;
@@ -101,16 +101,39 @@ form {
   margin: 1rem 0;
 }
 
-.input-container i {
+.input-container .bx-check-circle,
+.input-container .bx-error-circle {
   visibility: hidden;
   position: absolute;
   top: 15px;
-  /* transform: translateY(-50%); */
   right: 10px;
 }
 
+.input-container.success input,
+.input-container.success textarea {
+  border-color: var(--color-success);
+}
+.input-container.error input,
+.input-container.error textarea {
+  border-color: var(--color-error);
+}
+
+.input-container.success .bx-check-circle {
+  color: var(--color-success);
+  visibility: visible;
+}
+
+.input-container.error .bx-error-circle {
+  color: var(--color-error);
+  visibility: visible;
+}
+
 small {
+  color: var(--color-error);
   visibility: hidden;
+}
+.input-container.error small {
+  visibility: visible;
 }
 
 .pair {
@@ -188,6 +211,13 @@ textarea {
   margin-bottom: 0.5rem;
 }
 
+.query-container .success small {
+  visibility: hidden;
+}
+.query-container.error small {
+  visibility: visible;
+}
+
 .textarea label {
   position: absolute;
   top: 1rem;
@@ -198,6 +228,7 @@ textarea {
   font-weight: 400;
   font-size: 0.9rem;
   transition: 0.5s;
+  pointer-events: none;
 }
 
 #accept-form {

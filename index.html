@@ -12,20 +12,20 @@
     <title>Contact Form</title>
   </head>
   <body>
-    <div class="container">
-      <div class="msg-alert">
-        <div class="alert-title">
-          <i class="bx bx-check-circle"></i>
-          <h5>Message Sent!</h5>
-        </div>
-        <p>Thanks for completing the form. We'll be in touch soon!</p>
+    <div class="msg-alert">
+      <div class="alert-title">
+        <i class="bx bx-check-circle"></i>
+        <h5>Message Sent!</h5>
       </div>
-      <form onsubmit="formHandler">
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+    <div class="container">
+      <form>
         <h1>Contact Us</h1>
         <div class="contact-info">
           <div class="pair">
             <div class="input-container">
-              <input name="name" class="input" type="text" />
+              <input id="name" name="name" class="input" type="text" />
               <label for="" class="dynamic-label">First Name</label>
               <span class="focused-label">First Name</span>
               <i class="bx bx-check-circle"></i>
@@ -33,7 +33,7 @@
               <small>Error message</small>
             </div>
             <div class="input-container">
-              <input type="text" name="lastname" class="input" />
+              <input id="lastname" type="text" name="lastname" class="input" />
               <label for="lastName" class="dynamic-label">Last Name</label>
               <span class="focused-label">Last Name</span>
               <i class="bx bx-check-circle"></i>
@@ -43,7 +43,7 @@
           </div>
           <div class="single">
             <div class="input-container">
-              <input type="email" name="email" class="input" />
+              <input id="email" type="email" name="email" class="input" />
               <label for="" class="dynamic-label">Email</label>
               <span class="focused-label">Email</span>
               <i class="bx bx-check-circle"></i>
@@ -59,18 +59,20 @@
                   type="radio"
                   name="query-type"
                   id="general-inquiry"
-                  value="General Enquiry"
+                  value="general"
                 />
-                <label for="general-inquiry">General Enquiry</label>
+                General Enquiry
+                <!-- <label for="general-inquiry">General Enquiry</label> -->
               </div>
               <div class="radio-btn-container">
                 <input
                   type="radio"
                   name="query-type"
                   id="support-request"
-                  value="Support Request"
+                  value="support"
                 />
-                <label for="support-request">Support Request</label>
+                Support Request
+                <!-- <label for="support-request">Support Request</label> -->
               </div>
             </div>
 
@@ -79,9 +81,12 @@
 
           <div class="single">
             <div class="input-container textarea">
-              <textarea name="message" class="input"></textarea>
+              <textarea id="message" name="message" class="input"></textarea>
               <label for="">Message </label>
               <span class="focused-label">Message</span>
+              <i class="bx bx-check-circle"></i>
+              <i class="bx bx-error-circle"></i>
+              <small>Error message</small>
             </div>
           </div>
         </div>
