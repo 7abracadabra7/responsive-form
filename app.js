@@ -8,11 +8,9 @@ const firstname = document.querySelector("#name");
 const lastname = document.querySelector("#lastname");
 const email = document.querySelector("#email");
 const message = document.querySelector("#message");
-const checkRadio = document.querySelector('input[name="query-type"]:checked');
 const supportRequest = document.getElementById("support-request");
 const generalInquiry = document.getElementById("general-inquiry");
 
-let formIsValid = false;
 let counter = 0;
 
 const checkInputs = () => {
@@ -29,7 +27,6 @@ const checkInputs = () => {
     inputContainer.classList.remove("error");
     inputContainer.classList.add("success");
     counter++;
-
   };
   // set error function
   const setErrorFor = (input, message) => {
@@ -49,62 +46,57 @@ const checkInputs = () => {
   //checking firstname
   if (firstnameValue === "") {
     setErrorFor(firstname, "This field is required");
-    formIsValid = false;
   } else {
     setSuccessFor(firstname);
-    formIsValid = true;
   }
 
   //checking lastname
   if (lastnameValue === "") {
     setErrorFor(lastname, "This field is required");
-    formIsValid = false;
   } else {
     setSuccessFor(lastname);
-    formIsValid = true;
   }
 
   //checking email
   if (emailValue === "") {
     setErrorFor(email, "This field is required");
-    formIsValid = false;
   } else if (!isEmail(emailValue)) {
     setErrorFor(email, "email is not valid");
-    formIsValid = false;
   } else {
     setSuccessFor(email);
-    formIsValid = true;
   }
 
   //check query type
 
   const container = document.querySelector(".query-container");
-  console.log(generalInquiry.checked, supportRequest.ckecked, checkRadio);
+  generalInquiry.parentElement.classList.remove("success");
+
+  console.log(generalInquiry.checked, supportRequest.checked);
+
   if (!generalInquiry.checked && !supportRequest.checked) {
     let small = container.lastElementChild;
     small.innerText = "please select a query type";
     container.className = "query-container error";
-    formIsValid = false;
     counter--;
-
-  } else {
+  } else if (generalInquiry.checked) {
     container.className = "query-container success";
-    formIsValid = false;
-    counter++;
+    generalInquiry.parentElement.classList.add("success");
+    console.log(generalInquiry.parentElement);
 
+    counter++;
+  } else if (supportRequest.checked) {
+    container.className = "query-container success";
+    console.log(supportRequest.parentElement);
+    supportRequest.parentElement.classList.add("success");
+
+    counter++;
   }
 
   //check message
   if (messageValue === "") {
     setErrorFor(message, "message cannot be blank");
-    formIsValid = false;
   } else {
     setSuccessFor(message);
-    formIsValid = true;
-  }
-  console.log(formIsValid);
-  if (formIsValid) {
-    msgAlert.classList.add("active");
   }
 };
 
@@ -131,4 +123,3 @@ form.addEventListener("submit", (event) => {
     msgAlert.classList.add("active");
   }
 });
-

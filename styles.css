@@ -162,7 +162,7 @@ small {
 .radio-btn-container {
   outline: none;
   border: 2px solid var(--color-background);
-  background: none;
+  background: inherit;
   padding: 0.6rem 1.2rem;
   color: var(--color-white);
   font-weight: 500;
@@ -201,6 +201,10 @@ textarea {
 .radio-btn-container label {
   font-weight: 400;
   font-size: 0.9rem;
+}
+.radio-btn-container.success {
+  border-color: var(--color-success);
+  background-color: rgba(14, 83, 43, 0.5);
 }
 
 .query-container {
