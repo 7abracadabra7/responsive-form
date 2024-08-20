@@ -115,6 +115,8 @@ inputs.forEach((input) => {
     event.preventDefault();
   });
   input.addEventListener("blur", blurFunction);
+  input.addEventListener("keydown", checkInputs);
+  // input.addEventListener("click", checkInputs);
 });
 
 form.addEventListener("submit", (event) => {
@@ -126,3 +128,11 @@ form.addEventListener("submit", (event) => {
     msgAlert.classList.add("active");
   }
 });
+
+const inputChangeHandler = (event) => {
+  if (event.target.value) {
+  }
+};
+
+supportRequest.addEventListener("click", checkInputs);
+generalInquiry.addEventListener("click", checkInputs);
