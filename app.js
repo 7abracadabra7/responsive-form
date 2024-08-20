@@ -111,6 +111,9 @@ const blurFunction = (e) => {
 
 inputs.forEach((input) => {
   input.addEventListener("focus", focusFunction);
+  input.addEventListener("paste", (event) => {
+    event.preventDefault();
+  });
   input.addEventListener("blur", blurFunction);
 });
 
