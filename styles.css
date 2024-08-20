@@ -39,6 +39,7 @@ body {
   color: var(--color-background);
   font-size: 0.8rem;
   visibility: hidden;
+  transition: all ease-in-out 1s;
 }
 
 .msg-alert.active {
@@ -74,26 +75,6 @@ form {
 .contact-info {
   display: flex;
   flex-direction: column;
-}
-
-.circle {
-  border-radius: 50%;
-  background: linear-gradient(135deg, transparent 20%, #149279);
-  position: absolute;
-}
-
-.circle.one {
-  width: 130px;
-  height: 130px;
-  top: 130px;
-  right: -40px;
-}
-
-.circle.two {
-  width: 80px;
-  height: 80px;
-  top: 10px;
-  right: 30px;
 }
 
 .input-container {
